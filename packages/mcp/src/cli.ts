@@ -20,17 +20,17 @@ const { values } = parseArgs({
 });
 
 if (values.version) {
-  console.log('nodecoin v0.1.0');
+  console.log('nodegame-mcp v0.1.0');
   process.exit(0);
 }
 
 if (values.help) {
   console.log(`
-nodecoin - P2P Strategy Game via MCP
+nodegame-mcp - P2P Strategy Game via MCP
 
 USAGE
-  nodecoin [options]
-  npx nodecoin [options]
+  nodegame-mcp [options]
+  npx nodegame-mcp [options]
 
 OPTIONS
   -n, --name <name>        Settlement name (default: "Adventurer")
@@ -38,7 +38,7 @@ OPTIONS
   -b, --biome <biome>      Starting biome: plains, forest, mountain,
                            desert, coast, volcanic (default: plains)
   --seed <seed>            RNG seed for determinism
-  -d, --data-dir <path>    Data directory (default: ~/.nodecoin)
+  -d, --data-dir <path>    Data directory (default: ~/.nodegame-mcp)
   -p, --port <port>        P2P listen port (default: random)
   --bootstrap <addrs>      Bootstrap peers (comma-separated multiaddrs)
   --no-p2p                 Disable P2P networking
@@ -47,17 +47,17 @@ OPTIONS
 
 EXAMPLES
   # Single player
-  nodecoin --name "Ironforge" --biome mountain
+  nodegame-mcp --name "Ironforge" --biome mountain
 
   # Two local nodes
-  nodecoin --name "Ironforge" --port 9000 --data-dir /tmp/node1
-  nodecoin --name "Verdantia" --port 9001 --bootstrap "/ip4/127.0.0.1/tcp/9000" --data-dir /tmp/node2
+  nodegame-mcp --name "Ironforge" --port 9000 --data-dir /tmp/node1
+  nodegame-mcp --name "Verdantia" --port 9001 --bootstrap "/ip4/127.0.0.1/tcp/9000" --data-dir /tmp/node2
 
   # Add to Claude Code
-  claude mcp add nodecoin -- npx nodecoin --name "MyCastle"
+  claude mcp add nodegame-mcp -- npx nodegame-mcp --name "MyCastle"
 
   # Connect to a public network
-  nodecoin --name "MyCastle" --bootstrap "/ip4/YOUR_VPS_IP/tcp/9000"
+  nodegame-mcp --name "MyCastle" --bootstrap "/ip4/YOUR_VPS_IP/tcp/9000"
 
 GAME
   Once running, interact through your AI agent (Claude Code, Cursor, etc).

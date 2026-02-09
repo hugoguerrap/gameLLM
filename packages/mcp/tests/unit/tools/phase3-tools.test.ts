@@ -3,7 +3,7 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { GameController } from '../../../src/game-controller.js';
-import { BiomeType, UnitType, CombatStrategy } from '@nodecoin/engine';
+import { BiomeType, UnitType, CombatStrategy } from 'nodegame-mcp-engine';
 
 describe('Phase 3 Tools (via GameController)', () => {
   let tmpDir: string;

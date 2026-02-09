@@ -23,7 +23,7 @@ import {
   BuildingId,
   UnitType,
   CombatStrategy,
-} from '@nodecoin/engine';
+} from 'nodegame-mcp-engine';
 
 describe('Multi-node integration', () => {
   let tmpDir: string;

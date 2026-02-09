@@ -1,5 +1,5 @@
 {
-  "name": "@nodecoin/engine",
+  "name": "nodegame-mcp-engine",
   "version": "0.1.0",
   "type": "module",
   "description": "Pure game logic engine - deterministic, no side effects",

@@ -21,8 +21,8 @@ import {
   PvpAttackSchema,
   ChainInspectSchema,
 } from './schemas.js';
-import { BUILDING_DEFINITIONS, TECH_DEFINITIONS, UNIT_DEFINITIONS, type UnitType } from '@nodecoin/engine';
-import type { SharedWorldState, RankingData } from '@nodecoin/network';
+import { BUILDING_DEFINITIONS, TECH_DEFINITIONS, UNIT_DEFINITIONS, type UnitType } from 'nodegame-mcp-engine';
+import type { SharedWorldState, RankingData } from 'nodegame-mcp-network';
 
 function getNetworkRanking(controller: GameController, playerId: string): RankingData | null {
   const nm = controller.getNetworkManager();

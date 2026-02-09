@@ -9,7 +9,7 @@ import {
   BuildingId,
   CombatStrategy,
   UnitType,
-} from '@nodecoin/engine';
+} from 'nodegame-mcp-engine';
 
 describe('Status Tools (via GameController)', () => {
   let tmpDir: string;

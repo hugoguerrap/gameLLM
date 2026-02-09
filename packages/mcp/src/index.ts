@@ -5,9 +5,9 @@ import path from 'node:path';
 import os from 'node:os';
 import { GameController } from './game-controller.js';
 import { createMcpServer, startServer } from './server.js';
-import { BiomeType } from '@nodecoin/engine';
-import { TICK_DURATION_MS } from '@nodecoin/engine';
-import { Wallet, WalletStore, NetworkManager, RemoteActionProcessor, ChainStore, PeerStore, GameDatabase } from '@nodecoin/network';
+import { BiomeType } from 'nodegame-mcp-engine';
+import { TICK_DURATION_MS } from 'nodegame-mcp-engine';
+import { Wallet, WalletStore, NetworkManager, RemoteActionProcessor, ChainStore, PeerStore, GameDatabase } from 'nodegame-mcp-network';
 import { existsSync } from 'node:fs';
 
 // ── Configuration from env vars ──

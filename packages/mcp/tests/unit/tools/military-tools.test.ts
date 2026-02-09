@@ -9,7 +9,7 @@ import {
   UnitType,
   CombatStrategy,
   UNIT_DEFINITIONS,
-} from '@nodecoin/engine';
+} from 'nodegame-mcp-engine';
 
 describe('Military Tools (via GameController)', () => {
   let tmpDir: string;

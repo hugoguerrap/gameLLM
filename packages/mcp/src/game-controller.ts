@@ -48,7 +48,7 @@ import {
   type TechDefinition,
   type NpcTargetType,
   type ResourceMap,
-} from '@nodecoin/engine';
+} from 'nodegame-mcp-engine';
 import {
   GameDatabase,
   GameStore,
@@ -75,7 +75,7 @@ import {
   type RankingData,
   type TradeOffer as SharedTradeOffer,
   type AllianceData,
-} from '@nodecoin/network';
+} from 'nodegame-mcp-network';
 
 export interface GameControllerOptions {
   dbPath: string;

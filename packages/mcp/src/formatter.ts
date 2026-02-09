@@ -1,4 +1,4 @@
-import type { PlayerState } from '@nodecoin/engine';
+import type { PlayerState } from 'nodegame-mcp-engine';
 
 const ERA_NAMES: Record<number, string> = {
   1: 'Aldea',

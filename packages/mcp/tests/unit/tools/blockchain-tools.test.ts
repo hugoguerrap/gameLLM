@@ -3,8 +3,8 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { GameController } from '../../../src/game-controller.js';
-import { BiomeType } from '@nodecoin/engine';
-import { Wallet } from '@nodecoin/network';
+import { BiomeType } from 'nodegame-mcp-engine';
+import { Wallet } from 'nodegame-mcp-network';
 
 describe('Blockchain tools (via GameController)', () => {
   let tmpDir: string;

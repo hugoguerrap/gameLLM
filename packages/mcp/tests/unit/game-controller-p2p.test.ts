@@ -3,9 +3,9 @@ import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { GameController } from '../../src/game-controller.js';
-import { BiomeType, BuildingId, UnitType, DiplomacyStatus } from '@nodecoin/engine';
+import { BiomeType, BuildingId, UnitType, DiplomacyStatus } from 'nodegame-mcp-engine';
 import * as Automerge from '@automerge/automerge';
-import { Wallet, CommandType, createSharedState, addTradeOffer, type ActionBlock, type NetworkManager, type SharedWorldState } from '@nodecoin/network';
+import { Wallet, CommandType, createSharedState, addTradeOffer, type ActionBlock, type NetworkManager, type SharedWorldState } from 'nodegame-mcp-network';
 
 function createBlock(playerId: string, type: CommandType, args: Record<string, unknown>): ActionBlock {
   return {

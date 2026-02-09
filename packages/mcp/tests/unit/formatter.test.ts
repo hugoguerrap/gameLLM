@@ -7,7 +7,7 @@ import {
   UnitType,
   BuildingId,
   type PlayerState,
-} from '@nodecoin/engine';
+} from 'nodegame-mcp-engine';
 
 function createTestState(overrides: Partial<PlayerState> = {}): PlayerState {
   const base = createInitialPlayerState('test-id', 'TestSettlement', BiomeType.Forest);

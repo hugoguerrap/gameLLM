@@ -8,7 +8,7 @@ import {
   BuildingId,
   BUILDING_DEFINITIONS,
   ResourceType,
-} from '@nodecoin/engine';
+} from 'nodegame-mcp-engine';
 
 describe('Build Tools (via GameController)', () => {
   let tmpDir: string;

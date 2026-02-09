@@ -6,7 +6,7 @@ A distributed P2P strategy game where each player runs a node and plays through 
 
 ```bash
 # Add to Claude Code (requires Node.js >= 20)
-claude mcp add nodecoin -- npx nodecoin --name "MyCastle"
+claude mcp add nodegame -- npx nodegame-mcp --name "MyCastle"
 
 # Then just talk to Claude: "Check my game status", "Build a farm", "Recruit 5 soldiers"
 ```
@@ -15,13 +15,15 @@ claude mcp add nodecoin -- npx nodecoin --name "MyCastle"
 
 ```bash
 # Prerequisites: Node.js >= 20, pnpm >= 9
+git clone https://github.com/hugoguerrap/gameLLM.git
+cd gameLLM
 pnpm install && pnpm build
-claude mcp add --transport stdio nodecoin -- node packages/mcp/dist/cli.js --name "MyCastle"
+claude mcp add --transport stdio nodegame -- node packages/mcp/dist/cli.js --name "MyCastle"
 ```
 
 ## How It Works
 
-Each player runs their own NODECOIN node. The node exposes 34 game tools via MCP that your AI agent calls to play the game. Nodes discover each other via P2P networking, sync world state, and resolve cross-player actions (trades, combat, diplomacy) through a signed blockchain.
+Each player runs their own node. The node exposes 34 game tools via MCP that your AI agent calls to play the game. Nodes discover each other automatically via P2P networking (DHT + mDNS), sync world state, and resolve cross-player actions (trades, combat, diplomacy) through a signed blockchain.
 
 ```
 Player A (Claude Code) <--MCP--> Node A <--P2P--> Node B <--MCP--> Player B (Cursor)
@@ -44,16 +46,16 @@ Player A (Claude Code) <--MCP--> Node A <--P2P--> Node B <--MCP--> Player B (Cur
 
 ```bash
 # Node 1 - fixed port
-claude mcp add nodecoin1 -- npx nodecoin \
+claude mcp add node1 -- npx nodegame-mcp \
   --name "Ironforge" --biome mountain --port 9000 --data-dir /tmp/node1
 
 # Node 2 - connects to Node 1
-claude mcp add nodecoin2 -- npx nodecoin \
+claude mcp add node2 -- npx nodegame-mcp \
   --name "Verdantia" --biome forest --port 9001 \
   --bootstrap "/ip4/127.0.0.1/tcp/9000" --data-dir /tmp/node2
 ```
 
-Then talk to Claude: "Use nodecoin1 to build a farm", "Use nodecoin2 to check rankings".
+Then talk to Claude: "Use node1 to build a farm", "Use node2 to check rankings".
 
 ### Docker (3 nodes)
 
@@ -65,18 +67,22 @@ Starts 3 interconnected nodes (Ironforge, Verdantia, Sandhold) with auto-discove
 
 ### Remote (across the internet)
 
-```bash
-# On a VPS with public IP
-npx nodecoin --name "Hub" --port 9000
+Nodes find each other automatically via DHT. Just run:
 
-# Anyone can connect
-npx nodecoin --name "MyCastle" --bootstrap "/ip4/<VPS_IP>/tcp/9000"
+```bash
+npx nodegame-mcp --name "MyCastle"
+```
+
+Or connect to a specific peer:
+
+```bash
+npx nodegame-mcp --name "MyCastle" --bootstrap "/ip4/<PEER_IP>/tcp/9000"
 ```
 
 ## CLI Options
 
 ```
-nodecoin [options]
+nodegame-mcp [options]
 
   -n, --name <name>        Settlement name (default: "Adventurer")
   --id <id>                Player ID (default: random UUID)

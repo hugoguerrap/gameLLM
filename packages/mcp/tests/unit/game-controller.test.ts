@@ -11,7 +11,7 @@ import {
   BUILDING_DEFINITIONS,
   TECH_DEFINITIONS,
   ResourceType,
-} from '@nodecoin/engine';
+} from 'nodegame-mcp-engine';
 
 describe('GameController', () => {
   let tmpDir: string;

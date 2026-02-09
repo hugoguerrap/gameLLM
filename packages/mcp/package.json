@@ -1,12 +1,12 @@
 {
-  "name": "nodecoin",
+  "name": "nodegame-mcp",
   "version": "0.1.0",
   "type": "module",
   "description": "P2P Strategy Game via MCP - play through your AI agent",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "bin": {
-    "nodecoin": "./dist/cli.js"
+    "nodegame-mcp": "./dist/cli.js"
   },
   "exports": {
     ".": {
@@ -26,8 +26,8 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@nodecoin/engine": "workspace:*",
-    "@nodecoin/network": "workspace:*",
+    "nodegame-mcp-engine": "workspace:*",
+    "nodegame-mcp-network": "workspace:*",
     "@modelcontextprotocol/sdk": "^1.26.0",
     "zod": "^3.24.0"
   },

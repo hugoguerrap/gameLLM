@@ -7,7 +7,7 @@ import {
   BiomeType,
   BuildingId,
   TECH_DEFINITIONS,
-} from '@nodecoin/engine';
+} from 'nodegame-mcp-engine';
 
 describe('Economy Tools (via GameController)', () => {
   let tmpDir: string;
