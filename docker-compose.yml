@@ -1,0 +1,71 @@
+version: "3.8"
+
+services:
+  node1:
+    build: .
+    container_name: nodecoin-node1
+    environment:
+      NODECOIN_PLAYER_NAME: "Ironforge"
+      NODECOIN_PLAYER_ID: "player-node1"
+      NODECOIN_BIOME: "mountain"
+      NODECOIN_SEED: "seed-ironforge-42"
+      NODECOIN_DATA_DIR: "/data"
+      NODECOIN_P2P_ENABLED: "true"
+      NODECOIN_P2P_PORT: "9000"
+    volumes:
+      - node1-data:/data
+    ports:
+      - "9001:9000"
+    networks:
+      - nodecoin-net
+
+  node2:
+    build: .
+    container_name: nodecoin-node2
+    depends_on:
+      - node1
+    environment:
+      NODECOIN_PLAYER_NAME: "Verdantia"
+      NODECOIN_PLAYER_ID: "player-node2"
+      NODECOIN_BIOME: "forest"
+      NODECOIN_SEED: "seed-verdantia-77"
+      NODECOIN_DATA_DIR: "/data"
+      NODECOIN_P2P_ENABLED: "true"
+      NODECOIN_P2P_PORT: "9000"
+      NODECOIN_BOOTSTRAP_PEERS: "/dns4/nodecoin-node1/tcp/9000"
+    volumes:
+      - node2-data:/data
+    ports:
+      - "9002:9000"
+    networks:
+      - nodecoin-net
+
+  node3:
+    build: .
+    container_name: nodecoin-node3
+    depends_on:
+      - node1
+    environment:
+      NODECOIN_PLAYER_NAME: "Sandhold"
+      NODECOIN_PLAYER_ID: "player-node3"
+      NODECOIN_BIOME: "desert"
+      NODECOIN_SEED: "seed-sandhold-13"
+      NODECOIN_DATA_DIR: "/data"
+      NODECOIN_P2P_ENABLED: "true"
+      NODECOIN_P2P_PORT: "9000"
+      NODECOIN_BOOTSTRAP_PEERS: "/dns4/nodecoin-node1/tcp/9000"
+    volumes:
+      - node3-data:/data
+    ports:
+      - "9003:9000"
+    networks:
+      - nodecoin-net
+
+volumes:
+  node1-data:
+  node2-data:
+  node3-data:
+
+networks:
+  nodecoin-net:
+    driver: bridge

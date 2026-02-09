@@ -1,0 +1,16 @@
+export const TICK_DURATION_MS = 60_000; // 1 minute per tick
+export const TAX_RATE = 0.03; // 3% transaction tax
+export const BASE_STORAGE = 500;
+export const FOOD_PER_CITIZEN = 2;
+export const BUILDING_COST_MULTIPLIER = 1.15;
+export const COMBAT_BASE_DAMAGE = 30;
+export const COMBAT_SCALING_FACTOR = 17;
+export const COMBAT_RANDOM_MIN = 0.75;
+export const COMBAT_RANDOM_MAX = 1.25;
+export const UNIT_TRIANGLE_BONUS = 3;
+export const EVENT_CHECK_INTERVAL = 30; // check every 30 ticks
+export const TRADE_OFFER_DEFAULT_TTL = 1440; // 24 hours in ticks
+export const PRESTIGE_BONUS_PER_LEVEL = 0.10;
+export const INITIAL_TOKENS = 100;
+export const BASE_MINING_REWARD = 0.1; // tokens per tick for being online
+export const MAX_POPULATION_PER_CHOZA = 5;

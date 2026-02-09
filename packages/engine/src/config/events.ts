@@ -1,0 +1,107 @@
+import { GameEventType, EventDefinition } from '../types/events.js';
+
+export const EVENT_DEFINITIONS: EventDefinition[] = [
+  {
+    type: GameEventType.VolcanicEruption,
+    name: 'Erupcion Volcanica',
+    description: 'A nearby volcano erupts, raining ash and fire. Buildings suffer damage but rare minerals surface.',
+    probability: 0.03,
+    effects: [
+      { type: 'production_modifier', resource: 'iron', value: 1.5 },
+      { type: 'production_modifier', resource: 'mana', value: 1.3 },
+      { type: 'production_modifier', resource: 'food', value: 0.5 },
+      { type: 'population_change', value: -3 },
+    ],
+    durationTicks: 15,
+    minEra: 1,
+  },
+  {
+    type: GameEventType.BanditHorde,
+    name: 'Horda de Bandidos',
+    description: 'A marauding band of outlaws threatens your settlement, demanding tribute.',
+    probability: 0.06,
+    effects: [
+      { type: 'resource_change', resource: 'food', value: -30 },
+      { type: 'resource_change', resource: 'wood', value: -20 },
+      { type: 'defense_modifier', value: 0.8 },
+    ],
+    durationTicks: 10,
+    minEra: 1,
+  },
+  {
+    type: GameEventType.ManaSurge,
+    name: 'Oleada de Mana',
+    description: 'A surge of magical energy washes over the land, empowering all arcane structures.',
+    probability: 0.04,
+    effects: [
+      { type: 'production_modifier', resource: 'mana', value: 2.0 },
+      { type: 'production_modifier', resource: 'gems', value: 1.3 },
+    ],
+    durationTicks: 20,
+    minEra: 2,
+  },
+  {
+    type: GameEventType.Famine,
+    name: 'Hambruna',
+    description: 'Crops fail and livestock perish. Your people go hungry.',
+    probability: 0.05,
+    effects: [
+      { type: 'production_modifier', resource: 'food', value: 0.3 },
+      { type: 'population_change', value: -5 },
+    ],
+    durationTicks: 20,
+    minEra: 1,
+  },
+  {
+    type: GameEventType.Festival,
+    name: 'Gran Festival',
+    description: 'A spontaneous celebration sweeps through your settlement, boosting morale.',
+    probability: 0.07,
+    effects: [
+      { type: 'production_modifier', resource: 'food', value: 1.2 },
+      { type: 'production_modifier', resource: 'wood', value: 1.2 },
+      { type: 'population_change', value: 2 },
+    ],
+    durationTicks: 10,
+    minEra: 1,
+  },
+  {
+    type: GameEventType.WanderingTrader,
+    name: 'Mercader Errante',
+    description: 'A mysterious merchant arrives offering rare goods at favorable prices.',
+    probability: 0.08,
+    effects: [
+      { type: 'resource_change', resource: 'gems', value: 5 },
+      { type: 'resource_change', resource: 'iron', value: 15 },
+    ],
+    durationTicks: 5,
+    minEra: 1,
+  },
+  {
+    type: GameEventType.ResourceDiscovery,
+    name: 'Descubrimiento de Recursos',
+    description: 'Your explorers discover a rich vein of minerals nearby.',
+    probability: 0.05,
+    effects: [
+      { type: 'resource_change', resource: 'stone', value: 40 },
+      { type: 'resource_change', resource: 'iron', value: 20 },
+      { type: 'resource_change', resource: 'gems', value: 3 },
+    ],
+    durationTicks: 1,
+    minEra: 1,
+  },
+  {
+    type: GameEventType.Plague,
+    name: 'Plaga',
+    description: 'A terrible disease spreads through your settlement, decimating the population.',
+    probability: 0.03,
+    effects: [
+      { type: 'population_change', value: -8 },
+      { type: 'production_modifier', resource: 'food', value: 0.6 },
+      { type: 'production_modifier', resource: 'wood', value: 0.7 },
+      { type: 'production_modifier', resource: 'stone', value: 0.7 },
+    ],
+    durationTicks: 25,
+    minEra: 2,
+  },
+];

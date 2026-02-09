@@ -1,0 +1,39 @@
+{
+  "name": "nodecoin",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "P2P Strategy Game via MCP - play through your AI agent",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "nodecoin": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "keywords": ["mcp", "game", "p2p", "strategy", "ai", "claude", "nodecoin"],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@nodecoin/engine": "workspace:*",
+    "@nodecoin/network": "workspace:*",
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

@@ -1,0 +1,32 @@
+export {
+  createSharedState,
+  updateRanking,
+  addZoneDiscovery,
+  claimZone,
+  addCombatLog,
+  addTradeOffer,
+  removeTradeOffer,
+  upsertAlliance,
+  removeAlliance,
+  getChanges,
+  saveState,
+  loadState,
+  applyChanges,
+  mergeStates,
+  type SharedWorldState,
+  type ZoneData,
+  type RankingData,
+  type TradeOffer,
+  type CombatLogEntry,
+  type AllianceData,
+  type Signed,
+  computeDataHash,
+  verifySignedData,
+} from './state-sync.js';
+
+export {
+  SyncManager,
+  type SyncPayload,
+  uint8ArrayToBase64,
+  base64ToUint8Array,
+} from './sync-manager.js';
