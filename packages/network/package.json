@@ -1,6 +1,6 @@
 {
   "name": "nodegame-mcp-network",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "P2P networking, wallet, transactions, and persistence",
   "main": "./dist/index.js",

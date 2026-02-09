@@ -1,6 +1,6 @@
 {
   "name": "nodegame-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "P2P Strategy Game via MCP - play through your AI agent",
   "main": "./dist/index.js",

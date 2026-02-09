@@ -1,6 +1,6 @@
 {
   "name": "nodegame-mcp-engine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Pure game logic engine - deterministic, no side effects",
   "main": "./dist/index.js",
